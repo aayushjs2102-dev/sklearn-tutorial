@@ -1,0 +1,188 @@
+[
+    {
+        "id": 1,
+        "section": "Introduction",
+        "title": "What is Support Vector Machine",
+        "content": "Support Vector Machine (SVM) is a supervised machine learning algorithm used for both classification and regression tasks. Its primary objective is to find the optimal hyperplane that separates different classes while maximizing the margin between them. The larger the margin, the better the model is expected to generalize to unseen data. SVM is particularly effective for high-dimensional datasets and problems where the decision boundary is complex.",
+        "keywords": [
+            "support vector machine",
+            "svm",
+            "classification",
+            "supervised learning"
+        ],
+        "related_topics": [
+            "Hyperplane",
+            "Margin",
+            "Kernel Trick"
+        ]
+    },
+    {
+        "id": 2,
+        "section": "History",
+        "title": "Historical Background",
+        "content": "Support Vector Machine was introduced during the 1990s by Vladimir Vapnik and his colleagues based on Statistical Learning Theory. The algorithm gained popularity because of its strong theoretical foundation, excellent generalization ability, and effectiveness on high-dimensional datasets. Today, SVM remains a popular choice for text classification, image recognition, and bioinformatics.",
+        "keywords": [
+            "vladimir vapnik",
+            "statistical learning",
+            "history"
+        ],
+        "related_topics": [
+            "Statistical Learning Theory"
+        ]
+    },
+    {
+        "id": 3,
+        "section": "Applications",
+        "title": "Real-world Applications",
+        "content": "Support Vector Machines are widely used in image classification, face recognition, handwriting recognition, medical diagnosis, sentiment analysis, spam filtering, text categorization, bioinformatics, gene classification, fraud detection, and anomaly detection. SVM performs particularly well when the number of features is much larger than the number of training samples.",
+        "keywords": [
+            "image classification",
+            "spam detection",
+            "bioinformatics"
+        ],
+        "related_topics": [
+            "Computer Vision",
+            "Natural Language Processing"
+        ]
+    },
+    {
+        "id": 4,
+        "section": "Mathematics",
+        "title": "Hyperplane and Margin",
+        "content": "The objective of an SVM classifier is to find the optimal hyperplane that separates different classes while maximizing the margin between them. Support vectors are the training samples that lie closest to the decision boundary. These points determine the position of the hyperplane. A larger margin generally results in better generalization and improved robustness against unseen data.",
+        "keywords": [
+            "hyperplane",
+            "margin",
+            "support vectors"
+        ],
+        "related_topics": [
+            "Decision Boundary",
+            "Classification"
+        ]
+    },
+    {
+        "id": 5,
+        "section": "Kernel Methods",
+        "title": "Kernel Trick",
+        "content": "Many real-world datasets are not linearly separable. The Kernel Trick allows SVM to transform data into a higher-dimensional feature space without explicitly computing the transformation. Common kernel functions include Linear Kernel, Polynomial Kernel, Radial Basis Function (RBF) Kernel, and Sigmoid Kernel. The choice of kernel significantly affects model performance.",
+        "keywords": [
+            "kernel trick",
+            "rbf",
+            "polynomial kernel",
+            "linear kernel"
+        ],
+        "related_topics": [
+            "Feature Mapping",
+            "Nonlinear Classification"
+        ]
+    },
+    {
+        "id": 6,
+        "section": "Optimization",
+        "title": "Soft Margin Classification",
+        "content": "In many practical problems, perfectly separating all training samples is impossible. Soft Margin SVM introduces slack variables that allow some misclassifications while still maximizing the margin. The regularization parameter C controls the trade-off between maximizing the margin and minimizing classification errors. A small C produces a wider margin with more tolerance for errors, while a large C attempts to classify every training sample correctly.",
+        "keywords": [
+            "soft margin",
+            "regularization",
+            "parameter C"
+        ],
+        "related_topics": [
+            "Optimization",
+            "Generalization"
+        ]
+    },
+    {
+        "id": 7,
+        "section": "Hyperparameters",
+        "title": "Important Hyperparameters",
+        "content": "Important SVM hyperparameters include C, kernel, gamma, degree, coef0, shrinking, probability, tol, cache_size, class_weight, decision_function_shape, random_state, and max_iter. Proper hyperparameter tuning is essential because the performance of SVM is highly sensitive to kernel selection and parameter values.",
+        "keywords": [
+            "C",
+            "gamma",
+            "kernel",
+            "degree"
+        ],
+        "related_topics": [
+            "Grid Search",
+            "Hyperparameter Optimization"
+        ]
+    },
+    {
+        "id": 8,
+        "section": "Assumptions",
+        "title": "Model Characteristics",
+        "content": "Support Vector Machines work well in high-dimensional spaces and are effective even when the number of features exceeds the number of observations. Feature scaling is generally required because SVM is distance-based. The algorithm is less suitable for extremely large datasets because training complexity increases significantly as the dataset grows.",
+        "keywords": [
+            "feature scaling",
+            "high dimensional",
+            "distance based"
+        ],
+        "related_topics": [
+            "StandardScaler",
+            "Normalization"
+        ]
+    },
+    {
+        "id": 9,
+        "section": "Evaluation",
+        "title": "Evaluation Metrics",
+        "content": "Classification SVM models are evaluated using Accuracy, Precision, Recall, F1 Score, ROC-AUC, Precision-Recall Curve, and Confusion Matrix. Regression SVM models are evaluated using Mean Squared Error, Mean Absolute Error, Root Mean Squared Error, and R² Score. Cross-validation is commonly used to identify the optimal kernel and regularization parameters.",
+        "keywords": [
+            "accuracy",
+            "precision",
+            "roc",
+            "cross validation"
+        ],
+        "related_topics": [
+            "Model Evaluation",
+            "Cross Validation"
+        ]
+    },
+    {
+        "id": 10,
+        "section": "Implementation",
+        "title": "scikit-learn Usage",
+        "content": "Typical implementation:\n\nfrom sklearn.svm import SVC\n\nmodel = SVC(\n    kernel='rbf',\n    C=1.0,\n    gamma='scale',\n    probability=True,\n    random_state=42\n)\n\nmodel.fit(X_train, y_train)\n\npredictions = model.predict(X_test)\nprobabilities = model.predict_proba(X_test)\n\nImportant constructor parameters include C, kernel, gamma, degree, coef0, probability, shrinking, tol, class_weight, cache_size, decision_function_shape, random_state, and max_iter. Useful attributes include support_vectors_, support_, dual_coef_, intercept_, classes_, n_features_in_, feature_names_in_, and n_support_.",
+        "keywords": [
+            "SVC",
+            "SVR",
+            "sklearn"
+        ],
+        "related_topics": [
+            "Implementation",
+            "Kernel Selection"
+        ]
+    },
+    {
+        "id": 11,
+        "section": "Advantages",
+        "title": "Advantages and Limitations",
+        "content": "Support Vector Machines provide excellent performance on high-dimensional datasets, produce robust decision boundaries, and are effective when training data is limited. The kernel trick enables nonlinear classification without explicitly increasing dimensionality. However, SVM training becomes computationally expensive on very large datasets, requires careful hyperparameter tuning, and produces models that are less interpretable than Decision Trees or Logistic Regression.",
+        "keywords": [
+            "advantages",
+            "limitations",
+            "kernel trick"
+        ],
+        "related_topics": [
+            "Decision Tree",
+            "Logistic Regression"
+        ]
+    },
+    {
+        "id": 12,
+        "section": "Comparison",
+        "title": "Support Vector Machine vs Logistic Regression",
+        "content": "Both Support Vector Machine and Logistic Regression are supervised learning algorithms used for classification. Logistic Regression models probabilities using the sigmoid function and produces interpretable coefficients. Support Vector Machine focuses on maximizing the margin between classes and can model nonlinear decision boundaries through kernel functions. Logistic Regression is generally faster on very large datasets, while SVM often achieves better accuracy on smaller, high-dimensional datasets with complex decision boundaries.",
+        "keywords": [
+            "svm",
+            "logistic regression",
+            "comparison",
+            "kernel"
+        ],
+        "related_topics": [
+            "Logistic Regression",
+            "Kernel Trick",
+            "Margin Maximization"
+        ]
+    }
+]

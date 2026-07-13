@@ -1,0 +1,189 @@
+[
+    {
+        "id": 1,
+        "section": "Introduction",
+        "title": "What is a Decision Tree",
+        "content": "A Decision Tree is a supervised machine learning algorithm used for both classification and regression tasks. It predicts the target variable by recursively splitting the dataset into smaller subsets based on feature values. Each internal node represents a decision based on a feature, each branch represents the outcome of that decision, and each leaf node represents the final prediction. Decision Trees are highly interpretable and closely resemble human decision-making processes.",
+        "keywords": [
+            "decision tree",
+            "classification",
+            "regression",
+            "supervised learning"
+        ],
+        "related_topics": [
+            "Tree Structure",
+            "Classification",
+            "Regression"
+        ]
+    },
+    {
+        "id": 2,
+        "section": "History",
+        "title": "Historical Background",
+        "content": "Decision Trees originated from statistical decision theory and became popular because they produce models that are easy to understand and visualize. Algorithms such as ID3, C4.5, C5.0, and CART introduced efficient methods for constructing decision trees using information gain and impurity measures. Today, Decision Trees form the foundation of many ensemble learning methods including Random Forest and Gradient Boosting.",
+        "keywords": [
+            "id3",
+            "cart",
+            "c4.5",
+            "history"
+        ],
+        "related_topics": [
+            "Random Forest",
+            "Gradient Boosting"
+        ]
+    },
+    {
+        "id": 3,
+        "section": "Applications",
+        "title": "Real-world Applications",
+        "content": "Decision Trees are used in credit risk analysis, medical diagnosis, fraud detection, customer segmentation, loan approval, recommendation systems, manufacturing quality control, and predictive maintenance. Their interpretability makes them popular in domains where understanding the reasoning behind predictions is important.",
+        "keywords": [
+            "medical diagnosis",
+            "fraud detection",
+            "credit scoring"
+        ],
+        "related_topics": [
+            "Examples",
+            "Evaluation"
+        ]
+    },
+    {
+        "id": 4,
+        "section": "Tree Structure",
+        "title": "Components of a Decision Tree",
+        "content": "A Decision Tree consists of a root node, internal decision nodes, branches, and leaf nodes. The root node contains the entire dataset. Internal nodes perform feature-based tests. Branches represent the outcome of those tests, while leaf nodes contain the predicted class or regression value. Prediction is performed by traversing the tree from the root to a leaf based on feature values.",
+        "keywords": [
+            "root node",
+            "leaf node",
+            "branch",
+            "tree structure"
+        ],
+        "related_topics": [
+            "Tree Traversal",
+            "Prediction"
+        ]
+    },
+    {
+        "id": 5,
+        "section": "Mathematics",
+        "title": "Splitting Criteria",
+        "content": "Decision Trees determine the best feature for splitting the data by measuring impurity reduction. Common splitting criteria include Gini Impurity, Information Gain based on Entropy, and Log Loss. Regression trees typically minimize Mean Squared Error or Mean Absolute Error. The feature producing the greatest reduction in impurity is selected for splitting.",
+        "keywords": [
+            "gini",
+            "entropy",
+            "information gain",
+            "split"
+        ],
+        "related_topics": [
+            "Entropy",
+            "Gini Impurity"
+        ]
+    },
+    {
+        "id": 6,
+        "section": "Optimization",
+        "title": "Tree Growth and Pruning",
+        "content": "Decision Trees are built recursively using a greedy algorithm. At every node, the algorithm selects the split that maximizes impurity reduction. If allowed to grow without restrictions, Decision Trees tend to overfit the training data. Pruning techniques remove unnecessary branches to improve generalization. Pre-pruning limits tree growth using parameters such as maximum depth, while post-pruning removes weak branches after the tree has been constructed.",
+        "keywords": [
+            "pruning",
+            "overfitting",
+            "tree depth"
+        ],
+        "related_topics": [
+            "Hyperparameters",
+            "Generalization"
+        ]
+    },
+    {
+        "id": 7,
+        "section": "Hyperparameters",
+        "title": "Important Hyperparameters",
+        "content": "Important Decision Tree hyperparameters include criterion, splitter, max_depth, min_samples_split, min_samples_leaf, max_features, max_leaf_nodes, min_impurity_decrease, ccp_alpha, and random_state. Proper tuning of these parameters helps reduce overfitting while maintaining predictive performance.",
+        "keywords": [
+            "max_depth",
+            "criterion",
+            "min_samples_split",
+            "hyperparameters"
+        ],
+        "related_topics": [
+            "Grid Search",
+            "Random Search"
+        ]
+    },
+    {
+        "id": 8,
+        "section": "Assumptions",
+        "title": "Model Characteristics",
+        "content": "Decision Trees require very few assumptions about the underlying data. They can model nonlinear relationships, handle numerical and categorical features, and automatically capture feature interactions. However, they are sensitive to noisy data and small changes in the training dataset may produce significantly different tree structures.",
+        "keywords": [
+            "nonlinear",
+            "categorical",
+            "feature interactions"
+        ],
+        "related_topics": [
+            "Robustness",
+            "Random Forest"
+        ]
+    },
+    {
+        "id": 9,
+        "section": "Evaluation",
+        "title": "Evaluation Metrics",
+        "content": "Classification Decision Trees are evaluated using Accuracy, Precision, Recall, F1 Score, ROC-AUC, and Confusion Matrix. Regression Decision Trees are evaluated using Mean Squared Error, Mean Absolute Error, Root Mean Squared Error, and R² Score. Cross-validation is commonly used to estimate generalization performance.",
+        "keywords": [
+            "accuracy",
+            "precision",
+            "rmse",
+            "r2"
+        ],
+        "related_topics": [
+            "Cross Validation",
+            "Model Evaluation"
+        ]
+    },
+    {
+        "id": 10,
+        "section": "Implementation",
+        "title": "scikit-learn Usage",
+        "content": "Typical implementation:\n\nfrom sklearn.tree import DecisionTreeClassifier\n\nmodel = DecisionTreeClassifier(\n    criterion='gini',\n    max_depth=5,\n    random_state=42\n)\n\nmodel.fit(X_train, y_train)\n\npredictions = model.predict(X_test)\n\nImportant constructor parameters include criterion, splitter, max_depth, min_samples_split, min_samples_leaf, max_features, random_state, max_leaf_nodes, ccp_alpha, and class_weight. Useful attributes include feature_importances_, tree_, classes_, n_features_in_, and feature_names_in_.",
+        "keywords": [
+            "DecisionTreeClassifier",
+            "DecisionTreeRegressor",
+            "sklearn"
+        ],
+        "related_topics": [
+            "Python",
+            "Implementation"
+        ]
+    },
+    {
+        "id": 11,
+        "section": "Advantages",
+        "title": "Advantages and Limitations",
+        "content": "Decision Trees are easy to understand, require little data preprocessing, handle missing values reasonably well, support nonlinear decision boundaries, and provide feature importance estimates. Their major limitation is overfitting, especially when trees become very deep. They are also unstable because small changes in the data may produce different tree structures.",
+        "keywords": [
+            "advantages",
+            "limitations",
+            "overfitting"
+        ],
+        "related_topics": [
+            "Random Forest",
+            "Pruning"
+        ]
+    },
+    {
+        "id": 12,
+        "section": "Comparison",
+        "title": "Decision Tree vs Random Forest",
+        "content": "A Decision Tree builds a single tree to make predictions, whereas Random Forest combines predictions from many independently trained trees. Decision Trees are easier to interpret but are more prone to overfitting. Random Forest generally achieves higher predictive accuracy and better generalization by averaging multiple trees, although it sacrifices interpretability and requires more computational resources.",
+        "keywords": [
+            "random forest",
+            "ensemble learning",
+            "comparison"
+        ],
+        "related_topics": [
+            "Bagging",
+            "Ensemble Learning"
+        ]
+    }
+]

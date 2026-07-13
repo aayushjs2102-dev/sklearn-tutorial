@@ -1,0 +1,189 @@
+[
+    {
+        "id": 1,
+        "section": "Introduction",
+        "title": "What is K-Nearest Neighbors",
+        "content": "K-Nearest Neighbors (KNN) is a supervised machine learning algorithm used for both classification and regression. Unlike many machine learning algorithms, KNN does not build an explicit mathematical model during training. Instead, it stores the training data and makes predictions by finding the K most similar training samples to a new observation. The prediction is based on the majority class for classification or the average value for regression. Because it memorizes the training data instead of learning parameters, KNN is known as a lazy learning or instance-based learning algorithm.",
+        "keywords": [
+            "knn",
+            "k-nearest neighbors",
+            "lazy learning",
+            "instance based learning"
+        ],
+        "related_topics": [
+            "Distance Metrics",
+            "Classification",
+            "Regression"
+        ]
+    },
+    {
+        "id": 2,
+        "section": "History",
+        "title": "Historical Background",
+        "content": "The K-Nearest Neighbors algorithm is one of the earliest pattern recognition algorithms and has been widely used since the 1950s. It gained popularity because of its simplicity and effectiveness on small to medium-sized datasets. Despite its age, KNN remains an important baseline algorithm in machine learning and is commonly taught as one of the fundamental supervised learning techniques.",
+        "keywords": [
+            "history",
+            "pattern recognition",
+            "nearest neighbors"
+        ],
+        "related_topics": [
+            "Instance Based Learning"
+        ]
+    },
+    {
+        "id": 3,
+        "section": "Applications",
+        "title": "Real-world Applications",
+        "content": "K-Nearest Neighbors is used in recommendation systems, handwriting recognition, image classification, document categorization, medical diagnosis, fraud detection, customer segmentation, anomaly detection, and product recommendation. It performs well when similar observations belong to similar classes.",
+        "keywords": [
+            "recommendation systems",
+            "image classification",
+            "medical diagnosis"
+        ],
+        "related_topics": [
+            "Similarity Search",
+            "Recommendation Systems"
+        ]
+    },
+    {
+        "id": 4,
+        "section": "Working Principle",
+        "title": "How KNN Works",
+        "content": "When a new data point is presented, the algorithm computes its distance from every training sample. The K nearest samples are selected according to the chosen distance metric. For classification, the class with the highest number of neighbors is selected. For regression, the prediction is the average or weighted average of the neighboring target values. No explicit training phase exists because the algorithm stores all training examples.",
+        "keywords": [
+            "nearest neighbors",
+            "majority voting",
+            "prediction"
+        ],
+        "related_topics": [
+            "Distance Metrics",
+            "Classification"
+        ]
+    },
+    {
+        "id": 5,
+        "section": "Distance Metrics",
+        "title": "Distance Measures",
+        "content": "Distance metrics determine how similarity between observations is measured. Common distance metrics include Euclidean Distance, Manhattan Distance, Minkowski Distance, Chebyshev Distance, Hamming Distance, and Cosine Distance. The choice of distance metric significantly influences prediction accuracy and depends on the nature of the dataset.",
+        "keywords": [
+            "euclidean distance",
+            "manhattan distance",
+            "minkowski distance",
+            "cosine similarity"
+        ],
+        "related_topics": [
+            "Feature Scaling",
+            "Similarity Measures"
+        ]
+    },
+    {
+        "id": 6,
+        "section": "Optimization",
+        "title": "Choosing the Value of K",
+        "content": "The value of K determines the number of neighboring observations used for prediction. A very small K may lead to overfitting because predictions depend heavily on a few nearby points. A very large K may oversimplify the model by including distant neighbors from different classes. Cross-validation is commonly used to determine the optimal value of K.",
+        "keywords": [
+            "k value",
+            "cross validation",
+            "overfitting",
+            "underfitting"
+        ],
+        "related_topics": [
+            "Model Selection",
+            "Hyperparameter Tuning"
+        ]
+    },
+    {
+        "id": 7,
+        "section": "Hyperparameters",
+        "title": "Important Hyperparameters",
+        "content": "Important KNN hyperparameters include n_neighbors, weights, algorithm, leaf_size, metric, p, metric_params, and n_jobs. The weights parameter determines whether all neighbors contribute equally or closer neighbors receive greater importance. The algorithm parameter selects the search strategy, such as brute force, KD Tree, Ball Tree, or automatic selection.",
+        "keywords": [
+            "n_neighbors",
+            "weights",
+            "algorithm",
+            "metric"
+        ],
+        "related_topics": [
+            "KD Tree",
+            "Ball Tree"
+        ]
+    },
+    {
+        "id": 8,
+        "section": "Assumptions",
+        "title": "Model Characteristics",
+        "content": "KNN assumes that similar observations exist close together in the feature space. Because it relies entirely on distance calculations, feature scaling is essential. Numerical features with larger ranges can dominate the distance calculation if scaling is not performed. KNN is sensitive to irrelevant features and noisy observations because every stored instance may influence future predictions.",
+        "keywords": [
+            "feature scaling",
+            "normalization",
+            "distance based"
+        ],
+        "related_topics": [
+            "StandardScaler",
+            "MinMaxScaler"
+        ]
+    },
+    {
+        "id": 9,
+        "section": "Evaluation",
+        "title": "Evaluation Metrics",
+        "content": "Classification KNN models are evaluated using Accuracy, Precision, Recall, F1 Score, ROC-AUC, and Confusion Matrix. Regression KNN models are evaluated using Mean Absolute Error, Mean Squared Error, Root Mean Squared Error, and R² Score. Cross-validation is commonly employed when selecting the optimal number of neighbors.",
+        "keywords": [
+            "accuracy",
+            "precision",
+            "recall",
+            "rmse"
+        ],
+        "related_topics": [
+            "Cross Validation",
+            "Model Evaluation"
+        ]
+    },
+    {
+        "id": 10,
+        "section": "Implementation",
+        "title": "scikit-learn Usage",
+        "content": "Typical implementation:\n\nfrom sklearn.neighbors import KNeighborsClassifier\n\nmodel = KNeighborsClassifier(\n    n_neighbors=5,\n    weights='uniform',\n    metric='minkowski'\n)\n\nmodel.fit(X_train, y_train)\n\npredictions = model.predict(X_test)\nprobabilities = model.predict_proba(X_test)\n\nImportant constructor parameters include n_neighbors, weights, algorithm, leaf_size, metric, p, metric_params, and n_jobs. Useful methods include fit(), predict(), predict_proba(), kneighbors(), and score(). Useful attributes include effective_metric_, effective_metric_params_, classes_, n_features_in_, and feature_names_in_.",
+        "keywords": [
+            "KNeighborsClassifier",
+            "KNeighborsRegressor",
+            "sklearn"
+        ],
+        "related_topics": [
+            "Implementation",
+            "Distance Metrics"
+        ]
+    },
+    {
+        "id": 11,
+        "section": "Advantages",
+        "title": "Advantages and Limitations",
+        "content": "KNN is simple to understand, requires no explicit training phase, naturally handles multiclass classification, and adapts well to complex decision boundaries. However, prediction can be slow for large datasets because distances must be computed for every stored instance. The algorithm requires feature scaling, consumes significant memory, and is sensitive to irrelevant features and noisy data.",
+        "keywords": [
+            "advantages",
+            "limitations",
+            "lazy learning"
+        ],
+        "related_topics": [
+            "Feature Scaling",
+            "Nearest Neighbor Search"
+        ]
+    },
+    {
+        "id": 12,
+        "section": "Comparison",
+        "title": "K-Nearest Neighbors vs Support Vector Machine",
+        "content": "Both KNN and Support Vector Machine are supervised learning algorithms used for classification. KNN makes predictions by comparing new observations with stored training samples, whereas SVM learns an optimal decision boundary during training. KNN has virtually no training cost but can be slow during prediction, while SVM typically requires more training time but predicts much faster. KNN performs well on small datasets with clear neighborhood structures, whereas SVM is often preferred for high-dimensional datasets and complex decision boundaries.",
+        "keywords": [
+            "knn",
+            "svm",
+            "comparison",
+            "nearest neighbors"
+        ],
+        "related_topics": [
+            "Support Vector Machine",
+            "Distance Metrics",
+            "Classification"
+        ]
+    }
+]

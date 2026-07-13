@@ -1,0 +1,186 @@
+[
+    {
+        "id": 1,
+        "section": "Introduction",
+        "title": "What is Logistic Regression",
+        "content": "Logistic Regression is a supervised machine learning algorithm primarily used for classification problems. Unlike Linear Regression, which predicts continuous values, Logistic Regression predicts the probability that an observation belongs to a particular class. The predicted probability is converted into a class label using a decision threshold, commonly 0.5. Despite its name, Logistic Regression is a classification algorithm because its output is categorical rather than continuous.",
+        "keywords": [
+            "logistic regression",
+            "classification",
+            "supervised learning",
+            "probability"
+        ],
+        "related_topics": [
+            "Sigmoid Function",
+            "Binary Classification",
+            "Linear Regression"
+        ]
+    },
+    {
+        "id": 2,
+        "section": "History",
+        "title": "Historical Background",
+        "content": "Logistic Regression originated in statistics during the twentieth century as a method for modeling binary outcomes. It became widely adopted in medicine, economics, finance, and social sciences before becoming one of the standard classification algorithms in machine learning. Today it is commonly used as a baseline classifier because of its simplicity and interpretability.",
+        "keywords": [
+            "history",
+            "statistics",
+            "classification"
+        ],
+        "related_topics": [
+            "Generalized Linear Models"
+        ]
+    },
+    {
+        "id": 3,
+        "section": "Applications",
+        "title": "Real-world Applications",
+        "content": "Logistic Regression is widely used in binary and multiclass classification tasks. Common applications include spam detection, credit approval, disease diagnosis, customer churn prediction, fraud detection, sentiment analysis, employee attrition prediction, click-through rate prediction, and loan default prediction.",
+        "keywords": [
+            "spam detection",
+            "fraud detection",
+            "medical diagnosis"
+        ],
+        "related_topics": [
+            "Evaluation",
+            "Examples"
+        ]
+    },
+    {
+        "id": 4,
+        "section": "Mathematics",
+        "title": "Sigmoid Function",
+        "content": "The sigmoid function transforms any real-valued number into a probability between zero and one. The function is defined as P(y=1|x)=1/(1+e^(-z)), where z is the linear combination of input features and model coefficients. The sigmoid curve has an S-shaped form and is differentiable, making it suitable for gradient-based optimization.",
+        "keywords": [
+            "sigmoid",
+            "probability",
+            "activation"
+        ],
+        "related_topics": [
+            "Cost Function",
+            "Gradient Descent"
+        ]
+    },
+    {
+        "id": 5,
+        "section": "Mathematics",
+        "title": "Log Odds and Decision Boundary",
+        "content": "Logistic Regression models the logarithm of the odds rather than the output directly. The log-odds, also known as the logit, is computed as log(p/(1-p)) = b0 + b1x1 + ... + bnxn. Predictions are converted into class labels using a decision threshold, usually 0.5, although different thresholds may be selected depending on the application.",
+        "keywords": [
+            "logit",
+            "odds",
+            "decision boundary"
+        ],
+        "related_topics": [
+            "Threshold",
+            "Classification"
+        ]
+    },
+    {
+        "id": 6,
+        "section": "Optimization",
+        "title": "Cross Entropy Loss",
+        "content": "Unlike Linear Regression, Logistic Regression does not use Mean Squared Error because it produces a non-convex optimization problem. Instead, it minimizes Binary Cross Entropy, also called Log Loss. Cross Entropy heavily penalizes confident but incorrect predictions and provides a convex objective function suitable for optimization.",
+        "keywords": [
+            "cross entropy",
+            "log loss",
+            "cost function"
+        ],
+        "related_topics": [
+            "Gradient Descent",
+            "Maximum Likelihood Estimation"
+        ]
+    },
+    {
+        "id": 7,
+        "section": "Optimization",
+        "title": "Gradient Descent and Maximum Likelihood",
+        "content": "Logistic Regression estimates its coefficients using Maximum Likelihood Estimation. Since there is no closed-form solution, optimization algorithms such as Gradient Descent, Stochastic Gradient Descent, Newton's Method, LBFGS, SAG, and SAGA are commonly used. The optimizer repeatedly updates the coefficients until the likelihood is maximized or convergence criteria are satisfied.",
+        "keywords": [
+            "gradient descent",
+            "maximum likelihood",
+            "lbfgs"
+        ],
+        "related_topics": [
+            "Optimization",
+            "Cost Function"
+        ]
+    },
+    {
+        "id": 8,
+        "section": "Assumptions",
+        "title": "Model Assumptions",
+        "content": "Logistic Regression assumes independent observations, little or no multicollinearity among predictors, a linear relationship between the independent variables and the log-odds of the dependent variable, and sufficient sample size. It does not require the predictors to be normally distributed.",
+        "keywords": [
+            "assumptions",
+            "multicollinearity",
+            "log odds"
+        ],
+        "related_topics": [
+            "Feature Engineering",
+            "Regularization"
+        ]
+    },
+    {
+        "id": 9,
+        "section": "Evaluation",
+        "title": "Evaluation Metrics",
+        "content": "Classification models are evaluated using Accuracy, Precision, Recall, F1 Score, ROC-AUC, Log Loss, Confusion Matrix, and Precision-Recall Curve. Depending on the business problem, maximizing recall may be more important than maximizing precision, especially in fraud detection and disease diagnosis.",
+        "keywords": [
+            "accuracy",
+            "precision",
+            "recall",
+            "f1",
+            "roc"
+        ],
+        "related_topics": [
+            "Confusion Matrix",
+            "ROC Curve"
+        ]
+    },
+    {
+        "id": 10,
+        "section": "Implementation",
+        "title": "scikit-learn Usage",
+        "content": "Typical implementation:\n\nfrom sklearn.linear_model import LogisticRegression\n\nmodel = LogisticRegression(\n    penalty='l2',\n    solver='lbfgs',\n    max_iter=100\n)\n\nmodel.fit(X_train, y_train)\n\npredictions = model.predict(X_test)\nprobabilities = model.predict_proba(X_test)\n\nImportant constructor parameters include penalty, C, solver, max_iter, class_weight, random_state, fit_intercept, tol, multi_class, warm_start, l1_ratio, and n_jobs. Useful attributes include coef_, intercept_, classes_, n_features_in_, feature_names_in_, and n_iter_.",
+        "keywords": [
+            "sklearn",
+            "LogisticRegression",
+            "python"
+        ],
+        "related_topics": [
+            "Parameters",
+            "Prediction"
+        ]
+    },
+    {
+        "id": 11,
+        "section": "Advantages",
+        "title": "Advantages and Limitations",
+        "content": "Logistic Regression is simple, computationally efficient, interpretable, and performs well when classes are linearly separable. It produces calibrated probability estimates and trains quickly on large datasets. However, it struggles with highly nonlinear decision boundaries, is sensitive to multicollinearity, and may require feature scaling depending on the optimization algorithm.",
+        "keywords": [
+            "advantages",
+            "limitations"
+        ],
+        "related_topics": [
+            "Decision Trees",
+            "Support Vector Machines"
+        ]
+    },
+    {
+        "id": 12,
+        "section": "Comparison",
+        "title": "Logistic Regression vs Linear Regression",
+        "content": "Linear Regression predicts continuous numerical outputs, whereas Logistic Regression predicts probabilities that are converted into discrete class labels. Linear Regression minimizes Mean Squared Error using Ordinary Least Squares, while Logistic Regression minimizes Cross Entropy Loss using Maximum Likelihood Estimation. Linear Regression is used for regression tasks, whereas Logistic Regression is used for binary and multiclass classification.",
+        "keywords": [
+            "linear regression",
+            "classification",
+            "regression",
+            "comparison"
+        ],
+        "related_topics": [
+            "Linear Regression",
+            "Cross Entropy",
+            "OLS"
+        ]
+    }
+]

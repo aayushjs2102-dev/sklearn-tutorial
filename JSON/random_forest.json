@@ -1,0 +1,188 @@
+[
+    {
+        "id": 1,
+        "section": "Introduction",
+        "title": "What is Random Forest",
+        "content": "Random Forest is a supervised machine learning algorithm that combines multiple decision trees to improve predictive accuracy and reduce overfitting. Instead of relying on a single decision tree, Random Forest constructs hundreds or thousands of trees during training and combines their predictions using majority voting for classification or averaging for regression. The algorithm introduces randomness by selecting random subsets of training samples and random subsets of features for each tree, making the ensemble more robust than an individual decision tree.",
+        "keywords": [
+            "random forest",
+            "ensemble learning",
+            "bagging",
+            "supervised learning"
+        ],
+        "related_topics": [
+            "Decision Tree",
+            "Bagging",
+            "Ensemble Learning"
+        ]
+    },
+    {
+        "id": 2,
+        "section": "History",
+        "title": "Historical Background",
+        "content": "Random Forest was introduced by Leo Breiman in 2001 as an extension of the Bagging algorithm. The method combines bootstrap sampling with random feature selection to create diverse decision trees whose predictions are aggregated into a single model. It quickly became one of the most popular machine learning algorithms because of its excellent predictive performance and resistance to overfitting.",
+        "keywords": [
+            "leo breiman",
+            "history",
+            "bagging"
+        ],
+        "related_topics": [
+            "Bootstrap Sampling",
+            "Decision Tree"
+        ]
+    },
+    {
+        "id": 3,
+        "section": "Applications",
+        "title": "Real-world Applications",
+        "content": "Random Forest is widely used in fraud detection, medical diagnosis, credit scoring, customer churn prediction, stock market analysis, recommendation systems, bioinformatics, remote sensing, predictive maintenance, and image classification. It performs particularly well on structured tabular datasets containing both numerical and categorical features.",
+        "keywords": [
+            "fraud detection",
+            "medical diagnosis",
+            "customer churn"
+        ],
+        "related_topics": [
+            "Classification",
+            "Regression"
+        ]
+    },
+    {
+        "id": 4,
+        "section": "Working Principle",
+        "title": "Bootstrap Aggregating (Bagging)",
+        "content": "Random Forest relies on Bootstrap Aggregating, commonly known as Bagging. Each decision tree is trained on a bootstrap sample obtained by randomly selecting observations from the training dataset with replacement. Since every tree sees a slightly different dataset, the trees become diverse. During prediction, the outputs of all trees are aggregated to produce the final prediction.",
+        "keywords": [
+            "bagging",
+            "bootstrap",
+            "sampling"
+        ],
+        "related_topics": [
+            "Ensemble Learning",
+            "Bootstrap Sampling"
+        ]
+    },
+    {
+        "id": 5,
+        "section": "Working Principle",
+        "title": "Random Feature Selection",
+        "content": "In addition to bootstrap sampling, Random Forest randomly selects a subset of features at every node when searching for the best split. This reduces correlation among individual trees and improves the diversity of the ensemble. The random feature selection mechanism is one of the main reasons why Random Forest performs better than Bagging using ordinary decision trees.",
+        "keywords": [
+            "feature selection",
+            "random features",
+            "max_features"
+        ],
+        "related_topics": [
+            "Bagging",
+            "Decision Tree"
+        ]
+    },
+    {
+        "id": 6,
+        "section": "Optimization",
+        "title": "Prediction Process",
+        "content": "For classification problems, every decision tree predicts a class label and the final prediction is determined using majority voting. For regression problems, each tree predicts a numerical value and the final prediction is the average of all tree predictions. Increasing the number of trees generally improves stability but also increases computational cost.",
+        "keywords": [
+            "majority voting",
+            "averaging",
+            "prediction"
+        ],
+        "related_topics": [
+            "Classification",
+            "Regression"
+        ]
+    },
+    {
+        "id": 7,
+        "section": "Hyperparameters",
+        "title": "Important Hyperparameters",
+        "content": "Important Random Forest hyperparameters include n_estimators, criterion, max_depth, min_samples_split, min_samples_leaf, max_features, bootstrap, oob_score, max_leaf_nodes, random_state, class_weight, ccp_alpha, and n_jobs. Proper tuning of these parameters can significantly improve model accuracy and reduce overfitting.",
+        "keywords": [
+            "n_estimators",
+            "max_depth",
+            "max_features",
+            "bootstrap"
+        ],
+        "related_topics": [
+            "Grid Search",
+            "Hyperparameter Tuning"
+        ]
+    },
+    {
+        "id": 8,
+        "section": "Feature Importance",
+        "title": "Feature Importance Estimation",
+        "content": "Random Forest can estimate the importance of each feature by measuring how much each feature contributes to reducing impurity across all trees. Features with higher importance scores contribute more to prediction accuracy. Feature importance is commonly used for feature selection, model interpretation, and identifying influential variables in a dataset.",
+        "keywords": [
+            "feature importance",
+            "gini importance",
+            "interpretability"
+        ],
+        "related_topics": [
+            "Decision Tree",
+            "Feature Selection"
+        ]
+    },
+    {
+        "id": 9,
+        "section": "Evaluation",
+        "title": "Evaluation Metrics",
+        "content": "Classification Random Forest models are evaluated using Accuracy, Precision, Recall, F1 Score, ROC-AUC, Confusion Matrix, and Log Loss. Regression Random Forest models are evaluated using Mean Squared Error, Mean Absolute Error, Root Mean Squared Error, and R² Score. Out-of-Bag (OOB) Score provides an additional estimate of model performance without requiring a separate validation dataset.",
+        "keywords": [
+            "accuracy",
+            "oob score",
+            "roc",
+            "rmse"
+        ],
+        "related_topics": [
+            "Cross Validation",
+            "Model Evaluation"
+        ]
+    },
+    {
+        "id": 10,
+        "section": "Implementation",
+        "title": "scikit-learn Usage",
+        "content": "Typical implementation:\n\nfrom sklearn.ensemble import RandomForestClassifier\n\nmodel = RandomForestClassifier(\n    n_estimators=100,\n    criterion='gini',\n    max_depth=None,\n    random_state=42\n)\n\nmodel.fit(X_train, y_train)\n\npredictions = model.predict(X_test)\nprobabilities = model.predict_proba(X_test)\n\nImportant constructor parameters include n_estimators, criterion, max_depth, min_samples_split, min_samples_leaf, max_features, bootstrap, oob_score, class_weight, random_state, ccp_alpha, and n_jobs. Useful attributes include feature_importances_, estimators_, classes_, n_features_in_, feature_names_in_, oob_score_, and oob_decision_function_.",
+        "keywords": [
+            "RandomForestClassifier",
+            "RandomForestRegressor",
+            "sklearn"
+        ],
+        "related_topics": [
+            "Implementation",
+            "Parameters"
+        ]
+    },
+    {
+        "id": 11,
+        "section": "Advantages",
+        "title": "Advantages and Limitations",
+        "content": "Random Forest usually achieves higher predictive accuracy than a single Decision Tree and is much less prone to overfitting. It handles missing values reasonably well, captures nonlinear relationships, estimates feature importance, and works with high-dimensional datasets. However, it requires more memory, trains more slowly than a single tree, and produces models that are less interpretable because predictions are generated by many trees rather than one.",
+        "keywords": [
+            "advantages",
+            "limitations",
+            "overfitting"
+        ],
+        "related_topics": [
+            "Decision Tree",
+            "Feature Importance"
+        ]
+    },
+    {
+        "id": 12,
+        "section": "Comparison",
+        "title": "Random Forest vs Decision Tree",
+        "content": "A Decision Tree builds a single tree and is easy to visualize and interpret, but it often overfits the training data. Random Forest builds many decision trees using bootstrap sampling and random feature selection, combining their predictions to achieve better generalization and higher predictive accuracy. The trade-off is increased computational cost and reduced interpretability. Random Forest is generally preferred for production machine learning systems when prediction accuracy is more important than model simplicity.",
+        "keywords": [
+            "decision tree",
+            "ensemble",
+            "comparison",
+            "bagging"
+        ],
+        "related_topics": [
+            "Decision Tree",
+            "Ensemble Learning",
+            "Bagging"
+        ]
+    }
+]

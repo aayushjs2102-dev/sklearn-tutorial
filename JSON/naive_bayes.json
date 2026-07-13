@@ -1,0 +1,189 @@
+[
+    {
+        "id": 1,
+        "section": "Introduction",
+        "title": "What is Naive Bayes",
+        "content": "Naive Bayes is a supervised machine learning algorithm based on Bayes' Theorem. It is primarily used for classification tasks and estimates the probability that an observation belongs to a particular class. The algorithm assumes that all input features are conditionally independent given the class label. Although this assumption is rarely true in real-world datasets, Naive Bayes often performs remarkably well, especially for text classification problems. It is computationally efficient, requires relatively little training data, and produces probabilistic predictions.",
+        "keywords": [
+            "naive bayes",
+            "bayes theorem",
+            "classification",
+            "probability"
+        ],
+        "related_topics": [
+            "Bayes Theorem",
+            "Conditional Probability",
+            "Classification"
+        ]
+    },
+    {
+        "id": 2,
+        "section": "History",
+        "title": "Historical Background",
+        "content": "Naive Bayes originates from Bayes' Theorem proposed by Thomas Bayes in the eighteenth century. During the twentieth century, the theorem became widely used in statistics and artificial intelligence. The Naive Bayes classifier gained popularity in machine learning because of its simplicity, fast training time, and excellent performance in document classification, spam filtering, and sentiment analysis.",
+        "keywords": [
+            "thomas bayes",
+            "history",
+            "bayesian statistics"
+        ],
+        "related_topics": [
+            "Bayesian Learning"
+        ]
+    },
+    {
+        "id": 3,
+        "section": "Applications",
+        "title": "Real-world Applications",
+        "content": "Naive Bayes is widely used for spam email detection, sentiment analysis, document categorization, language identification, medical diagnosis, recommendation systems, customer feedback analysis, fake news detection, topic classification, and fraud detection. It performs particularly well on high-dimensional datasets such as text documents represented using Bag-of-Words or TF-IDF features.",
+        "keywords": [
+            "spam detection",
+            "sentiment analysis",
+            "text classification"
+        ],
+        "related_topics": [
+            "Natural Language Processing",
+            "Document Classification"
+        ]
+    },
+    {
+        "id": 4,
+        "section": "Mathematics",
+        "title": "Bayes Theorem",
+        "content": "Naive Bayes is based on Bayes' Theorem, which relates conditional probabilities. The posterior probability of a class is proportional to the prior probability multiplied by the likelihood of observing the features. During prediction, the algorithm computes the posterior probability for every class and selects the class with the highest probability.",
+        "keywords": [
+            "bayes theorem",
+            "posterior probability",
+            "prior probability"
+        ],
+        "related_topics": [
+            "Conditional Probability",
+            "Likelihood"
+        ]
+    },
+    {
+        "id": 5,
+        "section": "Assumptions",
+        "title": "Conditional Independence Assumption",
+        "content": "The defining assumption of Naive Bayes is that all input features are conditionally independent given the class label. This means that the presence or absence of one feature does not influence any other feature once the class is known. Although this assumption is often violated in practice, Naive Bayes still performs surprisingly well because it estimates class probabilities efficiently.",
+        "keywords": [
+            "conditional independence",
+            "naive assumption",
+            "probability"
+        ],
+        "related_topics": [
+            "Feature Independence",
+            "Bayesian Networks"
+        ]
+    },
+    {
+        "id": 6,
+        "section": "Variants",
+        "title": "Types of Naive Bayes",
+        "content": "Several variants of Naive Bayes exist depending on the type of input data. Gaussian Naive Bayes assumes numerical features follow a normal distribution. Multinomial Naive Bayes is commonly used for word-count features in document classification. Bernoulli Naive Bayes is designed for binary features indicating the presence or absence of attributes. Complement Naive Bayes is an extension that often performs better on imbalanced text datasets.",
+        "keywords": [
+            "GaussianNB",
+            "MultinomialNB",
+            "BernoulliNB",
+            "ComplementNB"
+        ],
+        "related_topics": [
+            "Probability Distributions",
+            "Text Classification"
+        ]
+    },
+    {
+        "id": 7,
+        "section": "Optimization",
+        "title": "Training Process",
+        "content": "Training a Naive Bayes classifier involves estimating prior probabilities for each class and likelihood probabilities for every feature. Unlike iterative algorithms such as Logistic Regression or Support Vector Machine, Naive Bayes has no gradient descent optimization process. Parameter estimation is performed directly from the training data, making training extremely fast even for very large datasets.",
+        "keywords": [
+            "training",
+            "prior",
+            "likelihood",
+            "parameter estimation"
+        ],
+        "related_topics": [
+            "Maximum Likelihood",
+            "Probability Estimation"
+        ]
+    },
+    {
+        "id": 8,
+        "section": "Hyperparameters",
+        "title": "Important Hyperparameters",
+        "content": "Important hyperparameters depend on the chosen Naive Bayes variant. Common parameters include var_smoothing for GaussianNB, alpha for MultinomialNB and BernoulliNB, fit_prior, class_prior, and binarize. Laplace smoothing controlled by alpha prevents zero probabilities for previously unseen feature values.",
+        "keywords": [
+            "alpha",
+            "var_smoothing",
+            "laplace smoothing"
+        ],
+        "related_topics": [
+            "Hyperparameter Tuning",
+            "Smoothing"
+        ]
+    },
+    {
+        "id": 9,
+        "section": "Evaluation",
+        "title": "Evaluation Metrics",
+        "content": "Naive Bayes classifiers are evaluated using Accuracy, Precision, Recall, F1 Score, ROC-AUC, Log Loss, Confusion Matrix, and Precision-Recall Curve. Since Naive Bayes produces class probabilities, probability calibration techniques may be applied when highly accurate probability estimates are required.",
+        "keywords": [
+            "accuracy",
+            "precision",
+            "recall",
+            "confusion matrix"
+        ],
+        "related_topics": [
+            "Classification Metrics",
+            "Probability Calibration"
+        ]
+    },
+    {
+        "id": 10,
+        "section": "Implementation",
+        "title": "scikit-learn Usage",
+        "content": "Typical implementation:\n\nfrom sklearn.naive_bayes import GaussianNB\n\nmodel = GaussianNB()\n\nmodel.fit(X_train, y_train)\n\npredictions = model.predict(X_test)\nprobabilities = model.predict_proba(X_test)\n\nOther commonly used implementations include MultinomialNB, BernoulliNB, ComplementNB, and CategoricalNB. Useful methods include fit(), predict(), predict_proba(), partial_fit(), and score(). Useful attributes include class_count_, class_prior_, classes_, epsilon_, feature_count_, and feature_log_prob_ depending on the selected estimator.",
+        "keywords": [
+            "GaussianNB",
+            "MultinomialNB",
+            "BernoulliNB",
+            "sklearn"
+        ],
+        "related_topics": [
+            "Implementation",
+            "Probability Prediction"
+        ]
+    },
+    {
+        "id": 11,
+        "section": "Advantages",
+        "title": "Advantages and Limitations",
+        "content": "Naive Bayes is simple, extremely fast to train, memory efficient, works well with high-dimensional data, and performs particularly well for text classification tasks. However, its independence assumption is often unrealistic, making it less effective when features are strongly correlated. The algorithm may also produce poorly calibrated probabilities and can struggle with complex nonlinear relationships.",
+        "keywords": [
+            "advantages",
+            "limitations",
+            "independence assumption"
+        ],
+        "related_topics": [
+            "Feature Correlation",
+            "Text Classification"
+        ]
+    },
+    {
+        "id": 12,
+        "section": "Comparison",
+        "title": "Naive Bayes vs Logistic Regression",
+        "content": "Both Naive Bayes and Logistic Regression are supervised learning algorithms used for classification. Naive Bayes is a generative probabilistic model that estimates class probabilities using Bayes' Theorem, while Logistic Regression is a discriminative model that directly learns the decision boundary using the sigmoid function. Naive Bayes typically trains much faster and performs exceptionally well on text classification problems, whereas Logistic Regression generally achieves higher accuracy when sufficient training data is available and feature independence assumptions do not hold.",
+        "keywords": [
+            "naive bayes",
+            "logistic regression",
+            "comparison",
+            "classification"
+        ],
+        "related_topics": [
+            "Logistic Regression",
+            "Bayesian Learning",
+            "Probability"
+        ]
+    }
+]

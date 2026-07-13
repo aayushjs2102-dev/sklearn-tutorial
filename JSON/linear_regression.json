@@ -1,0 +1,177 @@
+[
+  {
+    "id": 1,
+    "section": "Introduction",
+    "title": "What is Linear Regression",
+    "content": "Linear Regression is a supervised machine learning algorithm used to model the relationship\nbetween one or more independent variables (features) and a dependent variable (target).\nIts objective is to learn a linear relationship that can predict continuous numerical values.\nThe model estimates coefficients that minimize the difference between predicted and observed\nvalues. Linear regression is one of the oldest and most widely used statistical learning\ntechniques. It serves as the foundation for many advanced regression algorithms and is often\nused as a baseline model. Typical applications include house price prediction, sales\nforecasting, demand estimation, energy consumption prediction, and risk analysis.",
+    "keywords": [
+      "linear regression",
+      "supervised learning",
+      "regression",
+      "prediction"
+    ],
+    "related_topics": [
+      "History",
+      "Applications",
+      "OLS"
+    ]
+  },
+  {
+    "id": 2,
+    "section": "History",
+    "title": "Historical Background",
+    "content": "The method of least squares was introduced independently by Adrien-Marie Legendre in 1805\nand Carl Friedrich Gauss later formalized its statistical interpretation. Linear regression\nbecame a cornerstone of statistics before becoming one of the most important algorithms in\nmachine learning. Modern libraries such as scikit-learn provide efficient implementations,\nmaking it practical for datasets containing thousands or millions of observations.",
+    "keywords": [
+      "least squares",
+      "gauss",
+      "legendre"
+    ],
+    "related_topics": [
+      "Ordinary Least Squares"
+    ]
+  },
+  {
+    "id": 3,
+    "section": "Applications",
+    "title": "Real-world Applications",
+    "content": "Linear Regression is widely used whenever the prediction target is continuous. Common\napplications include predicting house prices, estimating insurance costs, forecasting sales,\npredicting temperatures, estimating fuel efficiency, demand forecasting, and financial trend\nanalysis. Although simple, the algorithm often provides a strong baseline against which more\ncomplex models are compared.",
+    "keywords": [
+      "applications",
+      "forecasting",
+      "house prices"
+    ],
+    "related_topics": [
+      "Evaluation",
+      "Examples"
+    ]
+  },
+  {
+    "id": 4,
+    "section": "Mathematics",
+    "title": "Mathematical Model",
+    "content": "For simple linear regression the model is\n\ny = b0 + b1*x\n\nwhere b0 is the intercept and b1 is the slope.\n\nFor multiple linear regression,\n\ny = b0 + b1*x1 + b2*x2 + ... + bn*xn\n\nThe coefficients represent the expected change in the target variable for a one-unit change\nin the corresponding feature while keeping the remaining features fixed.",
+    "keywords": [
+      "formula",
+      "coefficients",
+      "multiple regression"
+    ],
+    "related_topics": [
+      "OLS",
+      "Gradient Descent"
+    ]
+  },
+  {
+    "id": 5,
+    "section": "Optimization",
+    "title": "Cost Function",
+    "content": "The objective of training is to minimize the Mean Squared Error (MSE). The loss function\ncomputes the average squared difference between actual and predicted values. Squaring the\nerrors penalizes large mistakes more heavily than small ones and results in a smooth,\ndifferentiable optimization objective.",
+    "keywords": [
+      "mse",
+      "loss",
+      "optimization"
+    ],
+    "related_topics": [
+      "Gradient Descent",
+      "Evaluation"
+    ]
+  },
+  {
+    "id": 6,
+    "section": "Optimization",
+    "title": "Ordinary Least Squares",
+    "content": "Ordinary Least Squares (OLS) estimates coefficients by minimizing the sum of squared\nresiduals. Under standard assumptions, OLS provides unbiased coefficient estimates.\nThe closed-form solution can be written using matrix algebra as\nbeta = (X^T X)^(-1) X^T y, provided X^T X is invertible.",
+    "keywords": [
+      "ols",
+      "normal equation"
+    ],
+    "related_topics": [
+      "Matrix Form",
+      "Assumptions"
+    ]
+  },
+  {
+    "id": 7,
+    "section": "Optimization",
+    "title": "Gradient Descent",
+    "content": "Instead of solving the normal equation directly, gradient descent iteratively updates\nthe model parameters. Starting from random or zero values, coefficients are repeatedly\nadjusted in the direction that reduces the loss function. The learning rate controls the\nstep size. Too small a learning rate slows convergence, while too large a value can prevent\nthe algorithm from converging.",
+    "keywords": [
+      "gradient descent",
+      "learning rate"
+    ],
+    "related_topics": [
+      "Cost Function"
+    ]
+  },
+  {
+    "id": 8,
+    "section": "Assumptions",
+    "title": "Model Assumptions",
+    "content": "Linear regression assumes a linear relationship between predictors and target, independent\nobservations, constant error variance (homoscedasticity), approximately normally distributed\nresiduals for inference, and low multicollinearity among predictors. Violating these\nassumptions may reduce interpretability or predictive performance.",
+    "keywords": [
+      "assumptions",
+      "homoscedasticity",
+      "multicollinearity"
+    ],
+    "related_topics": [
+      "Residual Analysis"
+    ]
+  },
+  {
+    "id": 9,
+    "section": "Evaluation",
+    "title": "Evaluation Metrics",
+    "content": "Regression models are commonly evaluated using Mean Absolute Error (MAE), Mean Squared Error\n(MSE), Root Mean Squared Error (RMSE), and the coefficient of determination (R\u00b2). Lower MAE,\nMSE, and RMSE indicate better predictive accuracy, while R\u00b2 measures the proportion of target\nvariance explained by the model.",
+    "keywords": [
+      "mae",
+      "mse",
+      "rmse",
+      "r2"
+    ],
+    "related_topics": [
+      "Model Selection"
+    ]
+  },
+  {
+    "id": 10,
+    "section": "Implementation",
+    "title": "scikit-learn Usage",
+    "content": "Typical implementation:\n\nfrom sklearn.linear_model import LinearRegression\n\nmodel = LinearRegression(\n    fit_intercept=True,\n    positive=False\n)\n\nmodel.fit(X_train, y_train)\n\npredictions = model.predict(X_test)\n\nImportant constructor parameters include fit_intercept, copy_X, n_jobs, positive, and\ntol (for some implementations). After fitting, useful attributes include coef_,\nintercept_, n_features_in_, and feature_names_in_.",
+    "keywords": [
+      "sklearn",
+      "LinearRegression",
+      "python"
+    ],
+    "related_topics": [
+      "Parameters"
+    ]
+  },
+  {
+    "id": 11,
+    "section": "Advantages",
+    "title": "Advantages and Limitations",
+    "content": "Advantages include simplicity, interpretability, fast training, and strong performance on\nlinearly related data. Limitations include sensitivity to outliers, inability to model\nnonlinear relationships directly, susceptibility to multicollinearity, and reduced\nperformance when assumptions are heavily violated.",
+    "keywords": [
+      "advantages",
+      "limitations"
+    ],
+    "related_topics": [
+      "Ridge",
+      "Lasso"
+    ]
+  },
+  {
+    "id": 12,
+    "section": "Comparison",
+    "title": "Linear Regression vs Ridge and Lasso",
+    "content": "Ridge Regression extends linear regression by adding L2 regularization, reducing coefficient\nmagnitude and improving stability when predictors are highly correlated. Lasso Regression\nadds L1 regularization, encouraging sparse solutions by driving some coefficients exactly\nto zero, which performs feature selection. ElasticNet combines both L1 and L2 penalties.",
+    "keywords": [
+      "ridge",
+      "lasso",
+      "elasticnet",
+      "regularization"
+    ],
+    "related_topics": [
+      "Regularization"
+    ]
+  }
+]
